@@ -21,11 +21,6 @@
             </ul>
         </div>
     </nav>
-    <div class="container">
-        <h1>Welcome to Network Discovery</h1>
-        <p>This is the main page of the Network Discovery web application.</p>
-        <p>You can use the menu bar above to navigate to the Network Discovery Form or the Network Map.</p>
-    </div>
     <!-- Add the latest Bootstrap and jQuery JS links here -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -33,28 +28,35 @@
 
     <div class="container mt-4">
         <h1>Network Discovery Results</h1>
-        <table class="table table-bordered mt-3">
-            <thead>
-                <tr>
-                    <th>IP Address</th>
-                    <th>Hostname</th>
-                    <th>MAC Address</th>
-                    <th>Vendor</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for device in devices %}
-                    <tr>
-                        <td>{{ device['ip'] }}</td>
-                        <td>{{ device['hostname'] }}</td>
-                        <td>{{ device['mac'] }}</td>
-                        <td>{{ device['vendor'] }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        <h2 class="mt-4">Network Topology</h2>
-        <img src="{{ url_for('static', filename='network_topology.png') }}" alt="Network Topology" class="img-fluid mt-3">
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <h2>Network Topology</h2>
+                <img src="{{ url_for('static', filename='network_topology.png') }}" alt="Network Topology" class="img-fluid mt-3">
+            </div>
+            <div class="col-md-6">
+                <h2>Device Details</h2>
+                <table class="table table-bordered mt-3">
+                    <thead>
+                        <tr>
+                            <th>IP Address</th>
+                            <th>Hostname</th>
+                            <th>MAC Address</th>
+                            <th>Vendor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for device in devices %}
+                            <tr>
+                                <td>{{ device['ip'] }}</td>
+                                <td>{{ device['hostname'] }}</td>
+                                <td>{{ device['mac'] }}</td>
+                                <td>{{ device['vendor'] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </body>
 </html>
