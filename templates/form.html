@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Network Discovery Form</title>
+    <!-- Add the latest Bootstrap CSS link here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Network Discovery</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Network Discovery Form</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/map">Network Map</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Welcome to Network Discovery</h1>
+        <p>This is the main page of the Network Discovery web application.</p>
+        <p>You can use the menu bar above to navigate to the Network Discovery Form or the Network Map.</p>
+    </div>
+    <!-- Add the latest Bootstrap and jQuery JS links here -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <h1>Network Discovery</h1>
+    <form method="post" action="/map">
+        <label for="network_range">Network Range:</label>
+        <input type="text" id="network_range" name="network_range" placeholder="e.g., 192.168.1.0/24" required>
+        <br>
+        <input type="submit" value="Scan Network">
+    </form>
+</body>
+</html>
